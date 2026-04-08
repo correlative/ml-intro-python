@@ -1,8 +1,16 @@
 import sys
 import logging
+import mglearn
 import mglearn.plot_helpers
+import mglearn.plots
 from common import preamble
 from mglearn import datasets
+import numpy as np
+import matplotlib.pyplot as plt
+
+from warnings import simplefilter
+# ignore all future warnings
+simplefilter(action='ignore', category=FutureWarning)
 
 
 logger = logging.getLogger(__name__)
@@ -24,13 +32,16 @@ class Knearest():
 
     def run(self):
         logger.info({"message": "Running Knearest"})
-        self._generate_and_plot_dataset()
 
-    def _generate_and_plot_dataset(self):
-        self.X, self.y = datasets.make_forge()
-        logger.debug({
-            "message": "loaded data",
-            "X": self.X,
-            "y": self.y
-        })
-        # mglearn.plot_helpers.discrete_scatter(X[:, 0], X[:, 1]])
+        self.X, self.y = datasets.load_extended_boston()
+        print({"data_shape": (self.X.shape, self.y.shape)})
+
+        mglearn.plots.plot_knn_classification(n_neighbors=3)
+        plt.plot()
+        plt.show()
+
+        logger.info({"message": "Finished running Knearest"})
+
+
+
+
