@@ -437,4 +437,12 @@ pyrightconfig.json
 ## OSx
 .DS_Store
 
+### Bazel ###
+
+bazel-*
+bazel-bin/
+bazel-out/
+bazel-testlogs/
+bazel-ml_intro_python/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm+all,visualstudiocode
