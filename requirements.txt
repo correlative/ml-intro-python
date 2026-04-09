@@ -8,3 +8,5 @@ graphviz
 imageio
 joblib
 dataclasses
+plotly
+seaborn

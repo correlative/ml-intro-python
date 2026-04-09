@@ -325,7 +325,13 @@ matplotlib==3.10.8 \
     --hash=sha256:f97aeb209c3d2511443f8797e3e5a569aebb040d4f8bc79aa3ee78a8fb9e3dd8 \
     --hash=sha256:f9b587c9c7274c1613a30afabf65a272114cd6cdbe67b3406f818c79d7ab2e2a \
     --hash=sha256:fb061f596dad3a0f52b60dc6a5dec4a0c300dec41e058a7efe09256188d170b7
-    # via -r requirements.txt
+    # via
+    #   -r requirements.txt
+    #   seaborn
+narwhals==2.19.0 \
+    --hash=sha256:14fd7040b5ff211d415a82e4827b9d04c354e213e72a6d0730205ffd72e3b7ff \
+    --hash=sha256:1f8dfa4a33a6dbff878c3e9be4c3b455dfcaf2a9322f1357db00e4e92e95b84b
+    # via plotly
 numpy==2.4.4 \
     --hash=sha256:07077278157d02f65c43b1b26a3886bce886f95d20aabd11f87932750dfb14ed \
     --hash=sha256:08f2e31ed5e6f04b118e49821397f12767934cfdd12a1ce86a058f91e004ee50 \
@@ -407,10 +413,13 @@ numpy==2.4.4 \
     #   pandas
     #   scikit-learn
     #   scipy
+    #   seaborn
 packaging==26.0 \
     --hash=sha256:00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4 \
     --hash=sha256:b36f1fef9334a5588b4166f8bcd26a14e521f2b55e6b9de3aaa80d3ff7a37529
-    # via matplotlib
+    # via
+    #   matplotlib
+    #   plotly
 pandas==3.0.2 \
     --hash=sha256:01f31a546acd5574ef77fe199bc90b55527c225c20ccda6601cf6b0fd5ed597c \
     --hash=sha256:0555c5882688a39317179ab4a0ed41d3ebc8812ab14c69364bbee8fb7a3f6288 \
@@ -460,7 +469,9 @@ pandas==3.0.2 \
     --hash=sha256:f12b1a9e332c01e09510586f8ca9b108fd631fd656af82e452d7315ef6df5f9f \
     --hash=sha256:f4753e73e34c8d83221ba58f232433fca2748be8b18dbca02d242ed153945043 \
     --hash=sha256:f8d68083e49e16b84734eb1a4dcae4259a75c90fb6e2251ab9a00b61120c06ab
-    # via -r requirements.txt
+    # via
+    #   -r requirements.txt
+    #   seaborn
 pillow==12.2.0 \
     --hash=sha256:00a2865911330191c0b818c59103b58a5e697cae67042366970a6b6f1b20b7f9 \
     --hash=sha256:01afa7cf67f74f09523699b4e88c73fb55c13346d212a59a2db1f86b0a63e8c5 \
@@ -557,6 +568,10 @@ pillow==12.2.0 \
     #   -r requirements.txt
     #   imageio
     #   matplotlib
+plotly==6.6.0 \
+    --hash=sha256:8d6daf0f87412e0c0bfe72e809d615217ab57cc715899a1e5145135a7800d1d0 \
+    --hash=sha256:b897f15f3b02028d69f755f236be890ba950d0a42d7dfc619b44e2d8cea8748c
+    # via -r requirements.txt
 pyparsing==3.3.2 \
     --hash=sha256:850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d \
     --hash=sha256:c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc
@@ -671,6 +686,10 @@ scipy==1.17.1 \
     # via
     #   -r requirements.txt
     #   scikit-learn
+seaborn==0.13.2 \
+    --hash=sha256:636f8336facf092165e27924f223d3c62ca560b1f2bb5dff7ab7fad265361987 \
+    --hash=sha256:93e60a40988f4d65e9f4885df477e2fdaff6b73a9ded434c1ab356dd57eefff7
+    # via -r requirements.txt
 six==1.17.0 \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
