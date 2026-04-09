@@ -7,6 +7,7 @@ from supervised.knnneighbor import (
     plot_knn_classification_pairwise,
     # plot_knn_classification_cosine,
 )
+from supervised.complgen import compl_gen
 
 
 def run_two():
@@ -16,19 +17,22 @@ def run_two():
 if __name__ == "__main__":
     print(f" ############   START: supervise  ############# ")
     print("")
-    run_two()
-    print(" ----------------------------------------------- ")
-    skprtc.print_iris()
-    print(" ----------------------------------------------- ")
-    print("")
+    # run_two()
+    # print(" ----------------------------------------------- ")
+    # skprtc.print_iris()
+    # print(" ----------------------------------------------- ")
+    # print("")
+    #
+    # print(" ----------------------------------------------- ")
+    # print("")
+    # plot_knn_classification_euclidean(n_neighbors=3)
+    # # plot_knn_classification_manhattan(n_neighbors=3)
+    # plot_knn_classification_pairwise(n_neighbors=3)
+    # # plot_knn_classification_cosine(n_neighbors=3)
+    # print("")
+    # print(" ----------------------------------------------- ")
 
-    print(" ----------------------------------------------- ")
     print("")
-    plot_knn_classification_euclidean(n_neighbors=3)
-    # plot_knn_classification_manhattan(n_neighbors=3)
-    plot_knn_classification_pairwise(n_neighbors=3)
-    # plot_knn_classification_cosine(n_neighbors=3)
-    print("")
-    print(" ----------------------------------------------- ")
+    compl_gen()
     print("")
     print(f" ############    END: supervise   ############# ")

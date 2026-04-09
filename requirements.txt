@@ -10,3 +10,6 @@ joblib
 dataclasses
 plotly
 seaborn
+jupyter
+jupytext
+pandoc

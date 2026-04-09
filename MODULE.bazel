@@ -5,13 +5,15 @@
 # For more details, please check https://github.com/bazelbuild/bazel/issues/18958
 ###############################################################################
 
-
 ##### SETUP: PYTHON ###########################################################
 
-
 bazel_dep(name = "rules_python", version = "1.9.0")
+
 # https://github.com/bazel-contrib/rules_uv
 bazel_dep(name = "rules_uv", version = "0.89.2")
+
+# https://github.com/periareon/rules_jupyter/releases
+bazel_dep(name = "rules_jupyter", version = "0.6.0")
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(
@@ -24,8 +26,33 @@ pip.parse(
     python_version = "3.13",
     requirements_lock = "//:requirements_lock.txt",
 )
-
 use_repo(pip, "pypi")
+
 use_repo(python, "python_3_11")
+
+###############################################################################
+
+##### SETUP: JUPYTER ###########################################################
+# https://periareon.github.io/rules_jupyter/
+
+jupyter = use_extension("@rules_jupyter//jupyter:extensions.bzl", "jupyter")
+jupyter.pandoc(name = "pandoc")
+use_repo(jupyter, "pandoc")
+
+# Configure Playwright (required for WebPDF reports)
+playwright = use_extension("@rules_jupyter//jupyter:extensions.bzl", "playwright")
+playwright.toolchain(
+    name = "playwright_toolchains",
+    version = "1.57.0",
+)
+use_repo(playwright, "playwright_toolchains")
+
+## register the Bazel toolchain, pre-confihured in the tools lib
+register_toolchains("@playwright_toolchains//:all")
+
+## register the Bazel toolchain
+register_toolchains(
+    "//:jupyter_toolchain",
+)
 
 ###############################################################################
